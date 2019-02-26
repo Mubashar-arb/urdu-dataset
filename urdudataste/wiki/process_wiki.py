@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 # Author: Pan Yang (panyangnlp@gmail.com)
 # Copyrigh 2017
-
-from __future__ import print_function
-
 import logging
 import os.path
 import six
