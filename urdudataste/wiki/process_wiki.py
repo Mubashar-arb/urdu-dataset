@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     # check and process input arguments
     if len(sys.argv) != 3:
-        print("Using: python process_wiki.py enwiki.xxx.xml.bz2 wiki.en.text")
+        print("Using: python process_wiki.py urwiki-latest-pages-articles.xml.bz2  wiki.en.text")
         sys.exit(1)
     inp, outp = sys.argv[1:3]
     space = " "
