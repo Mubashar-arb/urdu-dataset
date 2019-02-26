@@ -22,6 +22,7 @@ if __name__ == '__main__':
 
     # check and process input arguments
     if len(sys.argv) != 3:
+        # https://www.kdnuggets.com/2017/11/building-wikipedia-text-corpus-nlp.html
         print("Using: python process_wiki.py urwiki-latest-pages-articles.xml.bz2  wiki.en.text")
         sys.exit(1)
     inp, outp = sys.argv[1:3]
