@@ -7,13 +7,17 @@ from scrapy.spiders import CrawlSpider, Rule
 class PostSpider(CrawlSpider):
     """
     Fetching post data
-    scrapy crawl posts_express -o posts.json -t json
+    scrapy crawl posts_express -o posts.json -t json -s JOBDIR=jobs/spider
     """
     name = "posts_express"
     start_urls = ['https://www.express.pk']
     allowed_domains = ["www.express.pk"]
 
-    rules = [Rule(LinkExtractor(), callback="parse_post", follow=True)]
+    rules = [
+        Rule(LinkExtractor(), callback="parse"),
+        # Rule(LinkExtractor(restrict_css=[".page-numbers", ".nav.navbar-nav"]), callback="parse", ),
+        Rule(LinkExtractor(allow=['/story/']), callback="parse_post",)
+    ]
 
     def parse_post(self, response):
         """
@@ -24,9 +28,6 @@ class PostSpider(CrawlSpider):
         Returns:
 
         """
-        if "/story/" not in response.url:
-            return
-
         yield {
             'url': response.url,
             'data': response.css('div.story-content ::text').extract()
