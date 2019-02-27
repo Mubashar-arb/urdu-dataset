@@ -4,9 +4,9 @@
 # Copyrigh 2017
 import logging
 import os.path
-import six
 import sys
 
+import six
 from gensim.corpora import WikiCorpus
 
 if __name__ == '__main__':
@@ -20,7 +20,8 @@ if __name__ == '__main__':
     # check and process input arguments
     if len(sys.argv) != 3:
         # https://www.kdnuggets.com/2017/11/building-wikipedia-text-corpus-nlp.html
-        print("Using: python process_wiki.py urwiki-latest-pages-articles.xml.bz2  wiki.en.text")
+        # https://dumps.wikimedia.org/urwiki/latest/
+        print("Using: python process_wiki.py urwiki-latest-pages-articles.xml.bz2  wiki.ur.text")
         sys.exit(1)
     inp, outp = sys.argv[1:3]
     space = " "
