@@ -14,8 +14,8 @@ class PostSpider(CrawlSpider):
     allowed_domains = ["www.express.pk"]
 
     rules = [
-        Rule(LinkExtractor(), callback="parse"),
-        # Rule(LinkExtractor(restrict_css=[".page-numbers", ".nav.navbar-nav"]), callback="parse", ),
+        # Rule(LinkExtractor(), callback="parse"),
+        Rule(LinkExtractor(restrict_css=[".page-numbers", ".nav.navbar-nav"]), callback="parse", ),
         Rule(LinkExtractor(allow=['/story/']), callback="parse_post",)
     ]
 
