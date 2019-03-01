@@ -2,28 +2,25 @@
 
 import json
 
-from urduhack.utils.io import pickle_dump
+from urduhack.utils.io import pickle_dump, pickle_load
 
 new_training_data = []
-data = "/Users/ikramali/Projects/Python/Xplore/data/125-172908_bathak_51986_posts-raw.pkl"
-data_dump = f"6000-20985_urdupoint_13780_posts-raw.pkl"
+data = f"6000-20985_urdupoint_13780_posts-raw.pkl"
+data_dump = f"6000-40442_urdupoint_32847_posts-raw.pkl"
 json_data = "/Users/ikram/WorkPlace/projects/urdu-dataset/urdudataste/urdupoint/urdupoint/posts.json"
 
-# with open(data, 'rb') as f:
-#     training_data = pickle.load(f)
-#
-# print("Old training data Count:{}".format(len(training_data)))
-#
-# for data_tuple in training_data:
-#     new_training_data.append(data_tuple)
-#
-# print("New training data Count:{}".format(len(new_training_data)))
-#
-# new_training_data = sorted(new_training_data, key=lambda x: int(x[0]))
-#
-# print(new_training_data[-3])
-# print(new_training_data[-2])
-# print(new_training_data[-1])
+training_data = pickle_load(data)
+
+print("Old training data Count:{}".format(len(training_data)))
+
+for data_tuple in training_data:
+    new_training_data.append(data_tuple)
+
+print("New training data Count:{}".format(len(new_training_data)))
+
+print(new_training_data[-3])
+print(new_training_data[-2])
+print(new_training_data[-1])
 
 json_data = json.load(open(json_data))
 json_data_list = []
