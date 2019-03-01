@@ -6,7 +6,7 @@ import scrapy
 class PostUrlSpider(scrapy.Spider):
     """
     Fetching Bathak Post by json urls list
-    Command : scrapy crawl json_urls -o posts.json -t json
+    Command : scrapy crawl urdupoint_urls -o posts.json -t json
     """
 
     name = "urdupoint_urls"
@@ -34,5 +34,5 @@ class PostUrlSpider(scrapy.Spider):
 
         yield {
             'url': response.url,
-            'data': response.css('div.detail_txt ::text').extract()
+            'data': response.css('div.detail_txt.urdu ::text').extract()
         }
