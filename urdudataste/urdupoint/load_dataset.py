@@ -2,7 +2,7 @@
 
 from urduhack.utils.io import pickle_load
 
-RAW_DATA_FILE = "6000-40442_urdupoint_32847_posts-raw.pkl"
+RAW_DATA_FILE = "6000-199185_urdupoint_146220_posts-raw.pkl"
 training_data = pickle_load(RAW_DATA_FILE)
 
 print(training_data[-1])

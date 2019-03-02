@@ -5,8 +5,8 @@ import json
 from urduhack.utils.io import pickle_dump, pickle_load
 
 new_training_data = []
-data = f"6000-20985_urdupoint_13780_posts-raw.pkl"
-data_dump = f"6000-40442_urdupoint_32847_posts-raw.pkl"
+data = f"6000-53171_urdupoint_45172_posts-raw.pkl"
+data_dump = f"6000-199185_urdupoint_146220_posts-raw.pkl"
 json_data = "/Users/ikram/WorkPlace/projects/urdu-dataset/urdudataste/urdupoint/urdupoint/posts.json"
 
 training_data = pickle_load(data)
@@ -26,7 +26,7 @@ json_data = json.load(open(json_data))
 json_data_list = []
 for item in json_data:
     post_data = item['data']
-    if len(post_data) < 10:
+    if len(post_data) < 15:
         print(item)
         continue
     data = (item['url'], post_data)

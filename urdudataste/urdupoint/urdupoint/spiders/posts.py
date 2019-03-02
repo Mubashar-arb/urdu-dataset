@@ -18,7 +18,7 @@ class PostUrlSpider(scrapy.Spider):
         Returns:
 
         """
-        for number in range(6000, 1844104):
+        for number in range(199186, 1844104):
             url = f'https://www.urdupoint.com/daily/livenews/2019-02-28/news-{number}.html'
             yield scrapy.Request(url=url, callback=self.parse)
 
