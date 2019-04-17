@@ -3,7 +3,7 @@
 from smart_open import smart_open
 from urduhack.utils.io import pickle_dump
 
-RAW_WIKI_DATA_FILE = "wiki_83840_posts-raw.pkl"
+RAW_WIKI_DATA_FILE = "wiki_84645_posts-08-Apr-2019-raw.pkl"
 wiki_posts = []
 wiki_ur = "wiki.ur.text"
 for line_no, line in enumerate(smart_open(wiki_ur, encoding="utf8")):

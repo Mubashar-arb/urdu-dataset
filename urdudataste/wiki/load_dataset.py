@@ -2,9 +2,7 @@
 
 import pickle
 
-from xplore.config.data import RAW_WIKI_DATA_FILE
-
-with open(RAW_WIKI_DATA_FILE, 'rb') as f:
+with open("wiki_84645_posts-08-Apr-2019-raw.pkl", 'rb') as f:
     training_data = pickle.load(f)
 
 print(training_data[-1])
