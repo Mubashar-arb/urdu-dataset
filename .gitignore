@@ -104,3 +104,9 @@ venv.bak/
 .mypy_cache/
 
 .idea/*
+
+# data files
+*.json
+
+# Sysytem stuff
+.DS_Store
